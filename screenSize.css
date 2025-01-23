@@ -1,11 +1,11 @@
-  /* Mobile Phone max 499px */
-@media screen and (max-width: 480px) {
+  /* Mobile Phone max 500px */
+@media screen and (max-width: 500px) {
   header h1 {
     font-size: 1.2em;
   }
 
   main{
-    margin-top: 30%;
+    margin-top: 150px;
   }
 
   .services h2 {
@@ -21,15 +21,15 @@
   }
 }
 
-  /* Mobile Phone min 314px - max 767px */
+  /* Mobile Phone 501px - 780px */
 @media screen and (min-width: 500px) and (max-width: 780px) {
   
 }
 
-  /* Tablet min 768px - max 1023px */
+  /* Tablet  781px - 1023px */
 @media screen and (min-width: 780px) and (max-width: 1023px) {
   main{
-    margin-top: 11%;
+    margin-top: 160px;
   }
 
   nav ul li {
@@ -55,7 +55,7 @@
   }
 }
 
-  /* Large screen min 1024px - max 767px */
+  /* Large screen 1024px  and above*/
 @media screen and (min-width: 1023px) {
   nav ul li {
     display: inline;
@@ -83,7 +83,7 @@
   }
 
   main{
-    margin-top: 10%;
+    margin-top: 200px;
   }
 
   .hero-image {
