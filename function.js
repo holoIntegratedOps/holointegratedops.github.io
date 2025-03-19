@@ -1,3 +1,10 @@
+// Google tag (gtag.js)
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-8B85G396XZ');
+
 
 // Header and Footer
 function footerText() {
