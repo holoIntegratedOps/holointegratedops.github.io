@@ -6,3 +6,9 @@
 .content{
     margin-bottom: 30px;
 }
+
+.content img {
+    max-width: 300px;
+    height: 250px;
+    padding: 10px;
+}
