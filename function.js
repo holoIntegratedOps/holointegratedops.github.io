@@ -30,3 +30,20 @@ function menuBtn() {
         nav.style.display = "block";
     }
 }
+
+// theme mode
+function darkMode() {
+    const body_theme = document.getElementsByClassName("body");
+    const header_theme = document.getElementsByClassName("header");
+
+    for (let i = 0; i < body_theme.length; i++) {
+        body_theme[i].style.color = "#B0B0B0";
+        body_theme[i].style.backgroundColor = "#121212";
+    }
+
+    for (let i = 0; i < header_theme.length; i++) {
+        header_theme[i].style.color = "#01162c";
+    }
+
+    localStorage.setItem("theme", "dark");
+}
