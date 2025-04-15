@@ -8,7 +8,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  /* background-color: rgb(240, 236, 230); */
+  background-color: rgb(240, 236, 230);
   font-size: 16px;
 }
 
@@ -20,7 +20,7 @@ body {
 
 /* Header style */
 header {
-  background-color: #007bff;
+  background-color: #032f5e;
   color: #fff;
   padding: 20px 0;
   position: fixed;
@@ -129,7 +129,7 @@ section {
 }
 
 .services-overview {
-  background-color: #f4f4f4;
+  background-color: #a89e9e;
   padding: 40px 20px;
 }
 
@@ -161,7 +161,7 @@ section {
 }
 
 .blog-highlights {
-  background-color: #f4f4f4;
+  background-color: #a89e9e;
   padding: 40px 20px;
 }
 
@@ -176,23 +176,38 @@ section {
   padding: 10px 20px;
   text-decoration: none;
 }
-  
-  .featured {
-    padding: 50px 0;
-  }
-  
-  .featured h2 {
-    font-size: 2em;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  /* Footer */
-  footer p {
-    font-size: 0.8em;
-  }
+
+.featured {
+  padding: 50px 0;
+}
+
+.featured h2 {
+  font-size: 2em;
+}
+
+.dark-mode{
+  color: white;
+  background-color: #121212;
+}
+
+.dark-mode-btn{
+  font-size:30px;
+  padding: 5px;
+  border-radius: 15px;
+  border: 10px dou;
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  font-size: 0.8em;
+}
