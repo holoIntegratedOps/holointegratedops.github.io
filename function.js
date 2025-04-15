@@ -1,9 +1,9 @@
 // Google tag (gtag.js)
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+// window.dataLayer = window.dataLayer || [];
+// function gtag(){dataLayer.push(arguments);}
+// gtag('js', new Date());
 
-gtag('config', 'G-8B85G396XZ');
+// gtag('config', 'G-8B85G396XZ');
 
 
 // Header and Footer
@@ -33,17 +33,13 @@ function menuBtn() {
 
 // theme mode
 function darkMode() {
-    const body_theme = document.getElementsByClassName("body");
-    const header_theme = document.getElementsByClassName("header");
-
-    for (let i = 0; i < body_theme.length; i++) {
-        body_theme[i].style.color = "#B0B0B0";
-        body_theme[i].style.backgroundColor = "#121212";
+    const body_theme = document.body.classList.toggle("dark-mode");
+    localStorage.setItem('dark_mode', body_theme ? 'enabled' : 'disabled')
+};
+window.addEventListener('DOMContentLoaded', () => {
+    const dark_mode = localStorage.getItem('dark_mode');
+    if (dark_mode === 'enabled') {
+        document.body.classList.add('dark-mode')
     }
-
-    for (let i = 0; i < header_theme.length; i++) {
-        header_theme[i].style.color = "#01162c";
-    }
-
-    localStorage.setItem("theme", "dark");
-}
+});
+document.getElementById('darkModeBtn').addEventListener('click', darkMode)
