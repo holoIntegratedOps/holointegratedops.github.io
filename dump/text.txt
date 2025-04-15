@@ -1,0 +1,68 @@
+Quiz: Test Your Mobile Cybersecurity Awareness
+Take this quick quiz to evaluate your understanding of mobile cybersecurity. Choose the most appropriate answer for each question.
+
+Where is the safest place to download apps for your Android device?
+a) Google Play Store
+b) Third-party app stores
+c) Random websites
+
+Which of these permissions should make you cautious about installing an app?
+a) A flashlight app requesting camera and microphone access
+b) A weather app requesting location access
+c) A file manager app requesting storage access
+
+What should you do when a utility app from an unknown developer offers amazing features?
+a) Install it immediately—it could be useful
+b) Verify the app’s reviews, ratings, and developer credentials
+c) Ignore the app’s permissions and install it anyway
+
+Which of these practices helps protect against spyware like KoSpy?
+a) Using an outdated Android version
+b) Enabling Google Play Protect
+c) Turning off app permissions completely
+
+How often should you update your device’s software and applications?
+a) Only when the device prompts you
+b) Regularly, as updates become available
+c) Never, to avoid storage issues
+
+Answer Key:
+
+a) Google Play Store
+
+a) A flashlight app requesting camera and microphone access
+
+b) Verify the app’s reviews, ratings, and developer credentials
+
+b) Enabling Google Play Protect
+
+b) Regularly, as updates become available
+
+Score Your Awareness:
+
+5/5: Excellent! You’re well-prepared to protect your mobile device.
+
+3–4/5: Good job! Review the topics you missed to further enhance your security.
+
+0–2/5: Time to brush up on your cybersecurity knowledge. Start with the tips in this blog!
+
+Alternatively, for a checklist, you can provide something like this:
+
+Checklist: Are You Protecting Your Mobile Device from Spyware?
+ Do you download apps only from trusted sources like Google Play Store?
+
+ Is Google Play Protect enabled on your device?
+
+ Do you review app permissions before installation?
+
+ Have you installed a mobile security app?
+
+ Are your device and apps updated regularly?
+
+ Do you avoid downloading utility apps from unknown developers?
+
+ Are you aware of the latest cybersecurity threats?
+
+Tip: If you couldn’t check off all the boxes, revisit the tips in this blog to improve your mobile cybersecurity practices!
+
+These elements can make your blog more engaging and useful for readers while driving home key points.

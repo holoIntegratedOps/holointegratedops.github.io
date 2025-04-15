@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question h3 {
+            margin: 0 0 10px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+            <section>
+                <div class="quiz-container">
+                    <form id="quizForm">
+                        <div class="question">
+                            <h1 style="text-align: center;">Quiz: text</h1>
+                            <p>Take this quick quiz to evaluate your understanding text. Choose the most appropriate answer for each question.</p>
+                            <h3>1. text</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus1" value="A"> text</li>
+                                <li><input type="radio" name="qus1" value="B"> text</li>
+                                <li><input type="radio" name="qus1" value="C"> text</li>
+                                <li><input type="radio" name="qus1" value="D"> text</li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <h3>2. text</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus2" value="A"> text</li>
+                                <li><input type="radio" name="qus2" value="B"> text</li>
+                                <li><input type="radio" name="qus2" value="C"> text</li>
+                                <li><input type="radio" name="qus2" value="D">  text</li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <h3>3. text</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus3" value="A"> text</li>
+                                <li><input type="radio" name="qus3" value="B"> text</li>
+                                <li><input type="radio" name="qus3" value="C"> text</li>
+                                <li><input type="radio" name="qus3" value="D"> text</li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <h3>4. text</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus4" value="A"> text</li>
+                                <li><input type="radio" name="qus4" value="B"> text</li>
+                                <li><input type="radio" name="qus4" value="C"> text</li>
+                                <li><input type="radio" name="qus4" value="D"> text</li>
+                            </ul>
+                        </div>
+                        <div class="question">
+                            <h3>5. text</h3>
+                            <ul class="options">
+                                <li><input type="radio" name="qus5" value="A"> text</li>
+                                <li><input type="radio" name="qus5" value="B"> text</li>
+                                <li><input type="radio" name="qus5" value="C"> text</li>
+                                <li><input type="radio" name="qus5" value="D"> text</li>
+                            </ul>
+                        </div>
+                        <button type="button" onclick="submitQuiz()" class="submit-btn">Submit</button>
+                    </form>
+                    <div id="result"></div>
+                </div>
+            </section>
+
+        <script>
+            // quiz
+            function submitQuiz() {
+                const answers = {
+                    qus1: "text",
+                    qus2: "text",
+                    qus3: "text",
+                    qus4: "text",
+                    qus5: "text",
+                };
+
+                const form = document.getElementById('quizForm');
+                let score = 0;
+
+                for (let question in answers) {
+                    const selected = form[question].value;
+                    if (selected === answers[question]) {
+                        score++;
+                    }
+                }
+
+                const totalQuestions = Object.keys(answers).length;
+                document.getElementById('result').innerHTML = `<div class="quiz-ans">
+                    <h2>Your Score: ${score}/${totalQuestions}</h2>
+                    <p>${score === totalQuestions ? "Excellent! You’re well-prepared to protect text." : score > 2 ? "Good job! Review the topics you missed to further enhance your security." : "Time to brush up on your cybersecurity knowledge. Start with the tips in this blog!"}</p> <br>
+                    <p>Answer Key:</p>
+                    <ul style="margin-left: 30px;">
+                        <li>text</li>
+                        <li>text</li>
+                        <li>text</li>
+                        <li>text</li>
+                        <li>text</li>
+                        </div>`;
+            }
+        </script>
+</body>
+</html>
