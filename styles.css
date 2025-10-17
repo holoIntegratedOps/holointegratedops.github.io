@@ -53,10 +53,6 @@ header h1 {
   background-color: #818386;
 }
 
-nav {
-  display: none;
-}
-
 nav ul {
   list-style-type: none;
   overflow: hidden;
@@ -77,7 +73,6 @@ nav ul li a {
 /* content styles */
 main{
   padding: 20px;
-  margin-top: 10px;
   min-height: 100%;
 }
 
