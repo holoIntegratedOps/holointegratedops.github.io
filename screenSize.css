@@ -4,10 +4,6 @@
     font-size: 1.2em;
   }
 
-  main{
-    margin-top: 10px;
-  }
-
   .services h2 {
     font-size: 2em;
 }
@@ -86,10 +82,6 @@
 
   .menu-button {
     display: none;
-  }
-
-  main{
-    margin-top: 200px;
   }
 
   .hero-image {
